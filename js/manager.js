@@ -227,7 +227,8 @@ const DFPManager = Object.assign(new EventEmitter().setMaxListeners(0), {
             let gptSlot;
             const adUnit = `${slot.dfpNetworkId}/${slot.adUnit}`;
             if (slot.renderOutOfThePage === true) {
-              gptSlot = googletag.defineOutOfPageSlot(adUnit, currentSlotId);
+              // gptSlot = googletag.defineOutOfPageSlot(adUnit, currentSlotId);
+              gptSlot = googletag.defineOutOfPageSlot(adUnit, googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
             } else {
               gptSlot = googletag.defineSlot(adUnit, slot.sizes, currentSlotId);
             }
